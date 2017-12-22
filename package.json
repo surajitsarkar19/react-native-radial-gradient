@@ -1,0 +1,19 @@
+{
+  "name": "react-native-radial-gradient",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "babel-preset-react-native": "^4.0.0",
+    "react": "^16.0.0",
+    "react-native": "^0.51.0"
+  }
+}
