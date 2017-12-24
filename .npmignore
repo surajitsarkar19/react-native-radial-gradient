@@ -38,10 +38,11 @@ build/
 .gradle
 local.properties
 *.iml
-.tmp/
+.tmp
 
 # BUCK
 buck-out/
 \.buckd/
 *.keystore
-myapplication/
+myapplication
+build
