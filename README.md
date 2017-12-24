@@ -14,14 +14,11 @@
 
 #### iOS
 
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-radial-gradient` and add `RNRadialGradient.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNRadialGradient.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
+Not Supported yet
 
 #### Android
 
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
+1. Open up `android/app/src/main/java/[...]/MainApplication.java`
   - Add `import com.surajit.rnrg.RNRadialGradientPackage;` to the imports at the top of the file
   - Add `new RNRadialGradientPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
@@ -37,9 +34,35 @@
 
 ## Usage
 ```javascript
-import RNRadialGradient from 'react-native-radial-gradient';
+import RadialGradient from 'react-native-radial-gradient';
 
 // TODO: What to do with the module?
-RNRadialGradient;
+<RadialGradient style={{width:200,height:200}}
+                        colors={['black','green','blue','red']}
+                        stops={[0.1,0.4,0.3,0.75]}
+                        center={[100,100]}
+                        radius={200}>
+          {child elements}
+</RadialGradient>
 ```
+
+
+
+##Props
+
+####colors
+An array of at least one color value. Color can be represented using string(i.e 'red', 'blue', 'black' etc.) or in #RRGGBB format. 
+
+####center
+An optional array of float value. If provided, it must contain x and y coordinate of the center of the gradient. 
+If nothing is provided then the center of the gradient will be at the middle of the element.
+
+####radius
+A float value of the radius of the radial gradient.
+
+####stops
+An optional array of numbers defining the location of each gradient color stop.
+The relative position of each corresponding color is in the colors array.
+Valid values are between <code>0.0f</code> and <code>1.0f</code>.
+Example: [0.1, 0.75, 1] means that first color will take 0% - 10%, second color will take 10% - 75% and finally third color will occupy 75% - 100%. By default all color will be distributed evenly.
   
