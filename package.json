@@ -1,7 +1,7 @@
 {
   "name": "react-native-radial-gradient",
   "version": "1.0.0",
-  "description": "",
+  "description": "Radial gradient library for react native",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,7 +9,7 @@
   "keywords": [
     "react-native"
   ],
-  "author": "",
+  "author": "Surajit Sarkar<surajitsarkar19@gmail.com>",
   "license": "",
   "devDependencies": {
     "babel-preset-react-native": "^4.0.0",
