@@ -6,7 +6,8 @@ export default class RadialGradient extends Component {
     static propTypes = {
         center: PropTypes.arrayOf(PropTypes.number),
         colors: PropTypes.arrayOf(PropTypes.string),
-        radius: PropTypes.arrayOf(PropTypes.number),
+        stops: PropTypes.arrayOf(PropTypes.number),
+        radius: PropTypes.number,
         ...ViewPropTypes,
     };
 
@@ -14,6 +15,7 @@ export default class RadialGradient extends Component {
         const {
             children,
             colors,
+            stops,
             center,
             radius,
             style,
@@ -28,6 +30,7 @@ export default class RadialGradient extends Component {
                     colors={(colors)?colors.map(processColor):null}
                     center={center}
                     radius={radius}
+                    stops={stops}
                 />
                 { children }
             </View>

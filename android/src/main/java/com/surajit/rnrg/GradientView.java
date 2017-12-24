@@ -13,6 +13,9 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.facebook.react.bridge.ReadableArray;
+import com.facebook.react.uimanager.PixelUtil;
+
+import java.text.DecimalFormat;
 
 /**
  * Created by Surajit Sarkar on 22/12/17.
@@ -28,7 +31,7 @@ public class GradientView extends View {
     private float centerY;
     private float radius;
     private int[] colors;
-    float[] stops = new float[]{0.0f, 0.2f, 0.42f, 0.6f, 0.75f};
+    float[] stops;
 
     public GradientView(Context context) {
         super(context);
@@ -94,20 +97,24 @@ public class GradientView extends View {
     public void setCenter(ReadableArray center){
         if(center == null || center.size()!=2 )
             return;
-        centerX = center.getInt(0);
-        centerY = center.getInt(1);
-        invalidate();
+        centerX = PixelUtil.toPixelFromDIP(center.getDouble(0));
+        centerY = PixelUtil.toPixelFromDIP(center.getDouble(1));
+        drawGradient();
     }
 
-    public void setRadius(int radius){
-        if(radius<=2)
+    public void setRadius(float radius){
+        if(radius<1)
             return;
-        this.radius = radius;
-        invalidate();
+        this.radius = PixelUtil.toPixelFromDIP(radius);
+        drawGradient();
     }
 
     private void drawGradient(){
-        RadialGradient gradient = new RadialGradient(centerX,centerY,radius,colors,null,Shader.TileMode.CLAMP);
+        if(centerX<0 || centerY<0 || radius <=0 || colors==null || colors.length <=0)
+            return;
+        if(stops!=null && stops.length != colors.length)
+            stops = null;
+        RadialGradient gradient = new RadialGradient(centerX,centerY,radius,colors,stops,Shader.TileMode.CLAMP);
         paint.setShader(gradient);
 
         invalidate();
@@ -125,5 +132,17 @@ public class GradientView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawRect(bounds,paint);
+    }
+
+    public void setStops(ReadableArray stops) {
+        if(stops == null || stops.size() == 0)
+            return;
+        float[] _stops = new float[stops.size()];
+        for (int i=0; i < _stops.length; i++)
+        {
+            _stops[i] = (float)stops.getDouble(i);
+        }
+        this.stops = _stops;
+        drawGradient();
     }
 }

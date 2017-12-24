@@ -16,6 +16,7 @@ public class RadialGradientManager extends SimpleViewManager<GradientView> {
     public static final String PROP_COLORS = "colors";
     public static final String PROP_CENTER = "center";
     public static final String PROP_RADIUS = "radius";
+    public static final String PROP_STOPS = "stops";
 
     @Override
     public String getName() {
@@ -38,7 +39,12 @@ public class RadialGradientManager extends SimpleViewManager<GradientView> {
     }
 
     @ReactProp(name=PROP_RADIUS)
-    public void setRadius(GradientView gradientView, int radius) {
+    public void setRadius(GradientView gradientView, float radius) {
         gradientView.setRadius(radius);
+    }
+
+    @ReactProp(name=PROP_STOPS)
+    public void setStops(GradientView gradientView, ReadableArray stops) {
+        gradientView.setStops(stops);
     }
 }
