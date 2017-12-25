@@ -46,3 +46,4 @@ buck-out/
 *.keystore
 myapplication
 build
+images/
