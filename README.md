@@ -58,7 +58,7 @@ An optional array of float value. If provided, it must contain x and y coordinat
 If nothing is provided then the center of the gradient will be at the middle of the element.
 
 #### radius
-A float value of the radius of the radial gradient.
+A float value of the radius of the radial gradient. By default it is <code> min(width/2,height/2)</code>
 
 #### stops
 An optional array of numbers defining the location of each gradient color stop.
