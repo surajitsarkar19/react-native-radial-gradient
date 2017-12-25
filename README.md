@@ -47,9 +47,9 @@ import RadialGradient from 'react-native-radial-gradient';
 ```
 
 ##Some output gradient
-![image1]("https://raw.githubusercontent.com/surajitsarkar19/react-native-radial-gradient/master/images/image1.png)
-![image2]("https://raw.githubusercontent.com/surajitsarkar19/react-native-radial-gradient/master/images/image2.png)
-![image4]("https://raw.githubusercontent.com/surajitsarkar19/react-native-radial-gradient/master/images/image4.png)
+![image1](https://raw.githubusercontent.com/surajitsarkar19/react-native-radial-gradient/master/images/image1.png)
+![image2](https://raw.githubusercontent.com/surajitsarkar19/react-native-radial-gradient/master/images/image2.png)
+![image4](https://raw.githubusercontent.com/surajitsarkar19/react-native-radial-gradient/master/images/image4.png)
 
 
 ## Props
