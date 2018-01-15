@@ -3,6 +3,9 @@
 @implementation SRSRadialGradientLayer
 {
     BOOL _needsNewGradient;
+    BOOL _startCenterInitialized;
+    BOOL _endCenterInitialized;
+    BOOL _endRadiusInitialized;
     CGGradientRef _lastGradient;
 }
 
@@ -40,6 +43,7 @@
 - (void)setStartCenter:(CGPoint)center
 {
     _startCenter = center;
+    _startCenterInitialized = YES;
     [self setNeedsNewGradient];
 }
 
@@ -52,12 +56,14 @@
 - (void)setEndCenter:(CGPoint)center
 {
     _endCenter = center;
+    _endCenterInitialized = YES;
     [self setNeedsNewGradient];
 }
 
 - (void)setEndRadius:(CGFloat)radius
 {
     _endRadius = radius;
+    _endRadiusInitialized = YES;
     [self setNeedsNewGradient];
 }
 
@@ -97,11 +103,13 @@
     if (size.width == 0.0 || size.height == 0.0)
         return;
 
+    CGPoint defaultCenter = CGPointMake(size.width / 2, size.height / 2);
+
     CGContextDrawRadialGradient(ctx, _lastGradient,
-                                self.startCenter,
+                                _startCenterInitialized ? self.startCenter : defaultCenter,
                                 self.startRadius,
-                                self.endCenter,
-                                self.endRadius,
+                                _endCenterInitialized ? self.endCenter : defaultCenter,
+                                _endRadiusInitialized ? self.endRadius : MIN(size.width / 2, size.height / 2),
                                 kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
 }
 
