@@ -1,34 +1,30 @@
 {
   "name": "react-native-radial-gradient",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Radial gradient library for react native",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native"
-  ],
-  "author":{
-	"name": "Surajit Sarkar",
-	"email": "surajitsarkar19@gmail.com" 
-  },
-  "keywords": [
     "react-native",
     "react",
     "native",
     "radial-gradient",
-	"radial",
-	"gradient"
-],
+    "radial",
+    "gradient"
+  ],
+  "author": {
+    "name": "Surajit Sarkar",
+    "email": "surajitsarkar19@gmail.com"
+  },
   "license": "MIT",
   "repository": {
-		"type": "git",
-		"url": "https://github.com/surajitsarkar19/react-native-radial-gradient.git"
-	},
+    "type": "git",
+    "url": "https://github.com/surajitsarkar19/react-native-radial-gradient.git"
+  },
   "devDependencies": {
     "babel-preset-react-native": "^4.0.0",
     "prop-types": "^15.6.0"
-
   }
 }

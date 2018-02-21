@@ -47,3 +47,4 @@ buck-out/
 myapplication
 build
 images/
+package-lock.json
