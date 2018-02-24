@@ -29,6 +29,9 @@
         else
         {
             [colors addObject:(id)[RCTConvert UIColor:colorString].CGColor];
+            if([colorStrings count]==1){
+                [colors addObject:(id)[[RCTConvert UIColor:colorString] colorWithAlphaComponent:0.5].CGColor];
+            }
         }
     }
     self.gradientLayer.colors = colors;
