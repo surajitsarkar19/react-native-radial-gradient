@@ -34,6 +34,21 @@
       compile project(':react-native-radial-gradient')
   	```
 
+If you've defined *[project-wide properties](https://developer.android.com/studio/build/gradle-tips.html)* in your root `build.gradle`, this library will detect the presence of the following properties:
+
+    ```groovy
+    buildscript {...}
+    allprojects {...}
+    
+    /**
+     + Project-wide Gradle configuration properties
+     */
+    ext {
+        compileSdkVersion   = 26
+        targetSdkVersion    = 26
+        buildToolsVersion   = "26.0.2"
+    }
+    ```
 
 ## Usage
 ```javascript
