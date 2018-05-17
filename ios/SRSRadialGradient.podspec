@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
                   SRSRadialGradient
                    DESC
-  s.homepage     = ""
+  s.homepage     = "https://github.com/surajitsarkar19/react-native-radial-gradient"
   s.license      = "MIT"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
   s.author             = { "author" => "author@domain.cn" }
