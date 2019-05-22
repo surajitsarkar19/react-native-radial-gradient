@@ -16,6 +16,7 @@
     if (self)
     {
         self.needsDisplayOnBoundsChange = YES;
+        self.masksToBounds = YES;
         _needsNewGradient = YES;
     }
 
@@ -111,6 +112,31 @@
                                 _endCenterInitialized ? self.endCenter : defaultCenter,
                                 _endRadiusInitialized ? self.endRadius : MIN(size.width / 2, size.height / 2),
                                 kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
+}
+
+
+
+
+
+
+- (void)display {
+    [super display];
+    
+    BOOL hasAlpha = NO;
+
+    for (NSInteger i = 0; i < self.colors.count; i++) {
+        hasAlpha = hasAlpha || CGColorGetAlpha((CGColorRef)self.colors[i]) < 1.0;
+    }
+
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, !hasAlpha, 0.0);
+    CGContextRef ref = UIGraphicsGetCurrentContext();
+    [self drawInContext:ref];
+
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    self.contents = (__bridge id _Nullable)(image.CGImage);
+    self.contentsScale = image.scale;
+
+    UIGraphicsEndImageContext();
 }
 
 @end
