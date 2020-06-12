@@ -8,7 +8,7 @@
   },
   "files": [
     "android/",
-	"ios/"
+	  "ios/"
   ],
   "keywords": [
     "react-native",
