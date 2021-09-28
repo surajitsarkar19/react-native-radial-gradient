@@ -9,7 +9,6 @@ buildscript {
     if (project == rootProject) {
         repositories {
             google()
-            jcenter()
             mavenCentral()
         }
 
@@ -40,7 +39,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        jcenter()
     }
 }
 
