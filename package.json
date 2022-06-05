@@ -10,6 +10,7 @@
     "android/",
 	  "ios/"
   ],
+  "types": "index.d.ts",
   "keywords": [
     "react-native",
     "react",
