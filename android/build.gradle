@@ -9,7 +9,6 @@ buildscript {
     if (project == rootProject) {
         repositories {
             google()
-            jcenter()
             mavenCentral()
         }
 
@@ -40,10 +39,9 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        jcenter()
     }
 }
 
 dependencies {
-    compile 'com.facebook.react:react-native:+'
+    implementation 'com.facebook.react:react-native:+'
 }
