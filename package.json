@@ -8,7 +8,7 @@
   },
   "files": [
     "android/",
-	  "ios/"
+    "ios/"
   ],
   "types": "index.d.ts",
   "keywords": [
@@ -33,5 +33,8 @@
   "devDependencies": {
     "babel-preset-react-native": "^4.0.0",
     "prop-types": "^15.6.0"
+  },
+  "dependencies": {
+    "deprecated-react-native-prop-types": "^2.3.0"
   }
 }
