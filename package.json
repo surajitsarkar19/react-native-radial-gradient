@@ -8,7 +8,8 @@
   },
   "files": [
     "android/",
-    "ios/"
+    "ios/",
+    "index.d.ts"
   ],
   "types": "index.d.ts",
   "keywords": [
