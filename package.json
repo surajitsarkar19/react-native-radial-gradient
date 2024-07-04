@@ -9,7 +9,8 @@
   "files": [
     "android/",
     "ios/",
-    "index.d.ts"
+    "index.d.ts",
+    "SRSRadialGradient.podspec"
   ],
   "types": "index.d.ts",
   "keywords": [
